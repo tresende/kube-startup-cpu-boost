@@ -11,3 +11,13 @@ docker build . -t tresende/calculator-api
 docker run -p 8080:8080 --rm tresende/calculator-api
 ```
 
+3- create deployment
+```bash
+k apply -f calculator-api-deployment.yaml
+```
+
+4- create service
+
+```bash
+k apply -f calculator-api-service.yaml
+```
