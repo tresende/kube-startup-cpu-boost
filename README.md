@@ -1,6 +1,9 @@
 # kube-startup-cpu-boost
 
 
+0- Install CPU boost
+https://github.com/google/kube-startup-cpu-boost
+
 1- build app image
 ```bash
 docker build . -t tresende/calculator-api
