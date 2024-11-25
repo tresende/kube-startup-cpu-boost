@@ -28,10 +28,15 @@ k apply -f calculator-api-service.yaml
 
 5- open dashboard
 ```bash
-kubectl -n default port-forward svc/kubernetes-dashboard-1732394517-kong-proxy 8443:443
+k -n default port-forward svc/kubernetes-dashboard-1732394517-kong-proxy 8443:443
 ```
 
 6- create token 
 ```bash
-kubectl -n default create token admin-user 
+k -n default create token admin-user 
+```
+
+7- create boost 
+```bash
+k apply -f boost.yaml
 ```
