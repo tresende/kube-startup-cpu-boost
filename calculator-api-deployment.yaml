@@ -6,7 +6,7 @@ metadata:
   labels:
     app: calculator-api
 spec:
-  replicas: 4
+  replicas: 1
   selector:
     matchLabels:
       app: calculator-api
@@ -14,8 +14,6 @@ spec:
     metadata:
       labels:
         app: calculator-api
-      annotations:
-        startupcpu.boost.kubernetes.io/enabled: "true" # Habilita o boost
     spec:
       containers:
         - name: calculator-api
@@ -27,3 +25,11 @@ spec:
               cpu: "150m"
             requests:
               cpu: "150m"
+          readinessProbe:
+            httpGet:
+              path: /
+              port: 8080
+            initialDelaySeconds: 0
+            periodSeconds: 2
+            failureThreshold: 3
+            successThreshold: 1

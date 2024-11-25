@@ -1,0 +1,18 @@
+apiVersion: autoscaling.x-k8s.io/v1alpha1
+kind: StartupCPUBoost
+metadata:
+  name: boost-001
+  namespace: calculator
+selector:
+  matchLabels:
+    app: calculator-api
+spec:
+  resourcePolicy:
+    containerPolicies:
+      - containerName: calculator-api
+        percentageIncrease:
+          value: 200
+  durationPolicy:
+    podCondition:
+      type: Ready
+      status: "True"

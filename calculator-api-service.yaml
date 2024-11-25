@@ -3,10 +3,11 @@ kind: Service
 metadata:
   name: calculator-api-service
   namespace: calculator
+  labels:
+    app: calculator-api
 spec:
   selector:
     app: calculator-api
-    name: calculator
   ports:
     - protocol: TCP
       port: 8080

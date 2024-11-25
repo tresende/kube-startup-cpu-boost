@@ -14,4 +14,10 @@ class CalculatorController {
         @RequestParam(value = "x") x: Int,
         @RequestParam(value = "y") y: Int
     ) = x + y
+
+
+    @GetMapping
+    fun hc() {
+        println("Health check")
+    }
 }

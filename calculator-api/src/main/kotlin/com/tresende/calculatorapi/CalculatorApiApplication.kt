@@ -14,17 +14,15 @@ fun main(args: Array<String>) {
 private fun stressCpu() {
     // Simulando uso intenso de CPU
     println("Iniciando o stress na CPU...")
-    for (i in 0 until 400) {
-        Thread { doCpuIntensiveWork() }.start()
+    for (i in 0 until 25000) {
+        doCpuIntensiveWork()
     }
 }
 
 private fun doCpuIntensiveWork() {
     var result = 0.0
-    while (true) {
-        for (i in 0 until 1_000_000) {
-            result += Math.sqrt(i.toDouble()) // operação pesada
-        }
+    for (i in 0 until 2_000_000) {
+        result += Math.sqrt(i.toDouble()) // operação pesada
     }
 }
 
