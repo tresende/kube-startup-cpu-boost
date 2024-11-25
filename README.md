@@ -28,7 +28,7 @@ k apply -f calculator-api-service.yaml
 
 5- open dashboard
 ```bash
-k -n default port-forward svc/kubernetes-dashboard-1732394517-kong-proxy 8443:443
+k -n default port-forward svc/kubernetes-dashboard-1732395935-kong-proxy 8443:443
 ```
 
 6- create token 

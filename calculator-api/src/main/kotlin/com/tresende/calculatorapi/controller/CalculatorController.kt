@@ -15,9 +15,29 @@ class CalculatorController {
         @RequestParam(value = "y") y: Int
     ) = x + y
 
+    @GetMapping("/cpu")
+    fun cpu() {
+        stressCpu()
+    }
+
 
     @GetMapping
     fun hc() {
         println("Health check")
+    }
+}
+
+private fun stressCpu() {
+    // Simulando uso intenso de CPU
+    println("Iniciando o stress na CPU...")
+    for (i in 0 until 35000) {
+        doCpuIntensiveWork()
+    }
+}
+
+private fun doCpuIntensiveWork() {
+    var result = 0.0
+    for (i in 0 until 2_000_000) {
+        result += Math.sqrt(i.toDouble()) // operação pesada
     }
 }

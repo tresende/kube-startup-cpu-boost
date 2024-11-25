@@ -14,7 +14,7 @@ fun main(args: Array<String>) {
 private fun stressCpu() {
     // Simulando uso intenso de CPU
     println("Iniciando o stress na CPU...")
-    for (i in 0 until 25000) {
+    for (i in 0 until 35000) {
         doCpuIntensiveWork()
     }
 }
