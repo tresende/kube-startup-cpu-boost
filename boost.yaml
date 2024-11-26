@@ -10,9 +10,13 @@ spec:
   resourcePolicy:
     containerPolicies:
       - containerName: calculator-api
-        percentageIncrease:
-          value: 200
+        fixedResources:
+          limits: 300m
+          requests: 300m
   durationPolicy:
+    # fixedDuration:
+    #   unit: Seconds
+    #   value: 60
     podCondition:
       type: Ready
       status: "True"

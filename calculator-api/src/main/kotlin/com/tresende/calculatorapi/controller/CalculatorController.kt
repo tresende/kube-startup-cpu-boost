@@ -16,8 +16,9 @@ class CalculatorController {
     ) = x + y
 
     @GetMapping("/cpu")
-    fun cpu() {
+    fun cpu(): String {
         stressCpu()
+        return "Ok"
     }
 
 
@@ -30,14 +31,14 @@ class CalculatorController {
 private fun stressCpu() {
     // Simulando uso intenso de CPU
     println("Iniciando o stress na CPU...")
-    for (i in 0 until 35000) {
+    for (i in 0 until 50000) {
         doCpuIntensiveWork()
     }
 }
 
 private fun doCpuIntensiveWork() {
     var result = 0.0
-    for (i in 0 until 2_000_000) {
+    for (i in 0 until 3_000_000) {
         result += Math.sqrt(i.toDouble()) // operação pesada
     }
 }

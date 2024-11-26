@@ -6,7 +6,7 @@ metadata:
   labels:
     app: calculator-api
 spec:
-  replicas: 3
+  replicas: 2
   selector:
     matchLabels:
       app: calculator-api
@@ -15,6 +15,7 @@ spec:
       labels:
         app: calculator-api
     spec:
+      terminationGracePeriodSeconds: 10
       containers:
         - name: calculator-api
           image: tresende/calculator-api:latest
@@ -30,6 +31,6 @@ spec:
               path: /
               port: 8080
             initialDelaySeconds: 0
-            periodSeconds: 2
+            periodSeconds: 60
             failureThreshold: 3
             successThreshold: 1
